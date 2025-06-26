@@ -65,7 +65,7 @@ class CSMA_CD_Node:
     def handle_collision(self):
         # Quando uma colisão é detectada, para de transmitir, começa o backoff e emite uma mensagem pra sinalizar colisão
         print(f"Nó {self.node_id} detectou colisão!")
-        self.redis.publish('transmissao', self.node_id)
+        self.redis.publish('transmissao', "livre")
         self.transmitting = False
         self.packet_remaining = 0
         self.exponential_backoff()

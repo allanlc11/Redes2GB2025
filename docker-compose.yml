@@ -1,0 +1,59 @@
+services:
+  redis:
+    image: redis:alpine
+
+  node1:
+    build: ./node
+    environment:
+      - NODE_ID=1
+    tty: true         # Allocate pseudo-TTY
+    command: ["python", "node.py"]
+    
+  node2:
+    build: ./node
+    environment:
+      - NODE_ID=2
+    tty: true         # Allocate pseudo-TTY
+    command: ["python", "node.py"]
+        
+  node3:
+    build: ./node
+    environment:
+      - NODE_ID=3
+    tty: true         # Allocate pseudo-TTY
+    command: ["python", "node.py"]
+    
+  node4:
+    build: ./node
+    environment:
+      - NODE_ID=4
+    tty: true         # Allocate pseudo-TTY
+    command: ["python", "node.py"]
+    
+  node5:
+    build: ./node
+    environment:
+      - NODE_ID=4
+    tty: true         # Allocate pseudo-TTY
+    command: ["python", "node.py"]
+    
+  node6:
+    build: ./node
+    environment:
+      - NODE_ID=4
+    tty: true         # Allocate pseudo-TTY
+    command: ["python", "node.py"]
+    
+  node7:
+    build: ./node
+    environment:
+      - NODE_ID=4
+    tty: true         # Allocate pseudo-TTY
+    command: ["python", "node.py"]
+    
+  node8:
+    build: ./node
+    environment:
+      - NODE_ID=4
+    tty: true         # Allocate pseudo-TTY
+    command: ["python", "node.py"]

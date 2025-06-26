@@ -33,27 +33,27 @@ services:
   node5:
     build: ./node
     environment:
-      - NODE_ID=4
+      - NODE_ID=5
     tty: true         # Allocate pseudo-TTY
     command: ["python", "node.py"]
     
   node6:
     build: ./node
     environment:
-      - NODE_ID=4
+      - NODE_ID=6
     tty: true         # Allocate pseudo-TTY
     command: ["python", "node.py"]
     
   node7:
     build: ./node
     environment:
-      - NODE_ID=4
+      - NODE_ID=7
     tty: true         # Allocate pseudo-TTY
     command: ["python", "node.py"]
     
   node8:
     build: ./node
     environment:
-      - NODE_ID=4
+      - NODE_ID=8
     tty: true         # Allocate pseudo-TTY
     command: ["python", "node.py"]

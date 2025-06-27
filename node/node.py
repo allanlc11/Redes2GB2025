@@ -82,10 +82,10 @@ class CSMA_CD_Node:
     def start_transmission(self):
         # Inicia nova transmissão
         self.redis.publish('transmissao', self.node_id)
+        print(f"Nó {self.node_id} iniciou transmissão")
         self.transmitting = True
         # Tamanho de pacote definido em unidades de tempo definido na inicialização
         self.packet_remaining = self.packet_size
-        print(f"Nó {self.node_id} iniciou transmissão")
     
     def continue_transmission(self):
         self.redis.publish('transmissao', self.node_id)
@@ -96,10 +96,10 @@ class CSMA_CD_Node:
     def complete_transmission(self):
         # Libera o meio para os outros nós com sucesso
         self.redis.publish('transmissao', "livre")
+        print(f"Nó {self.node_id} completou transmissão")
         self.transmitting = False
         self.backoff_time = 0
         self.collision_count = 0
-        print(f"Nó {self.node_id} completou transmissão")
         '''
         Suspeito que tenha alguma peculiaridade na ordem dos processos do docker que faça
         com que 1 dos nós transmita várias vezes seguidas com frequência inesperada.
